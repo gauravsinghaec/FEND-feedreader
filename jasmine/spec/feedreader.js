@@ -82,9 +82,17 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done){
-            loadFeed(0, function(){
-                done();
-            });
+            var err = null;
+            try {
+                loadFeed(0, function() {
+                    done(err);
+                });
+            }
+            catch(e){
+                err = e;
+                console.log(e.message);
+                done(err);
+            }
          });
 
          it('have been loaded successfully',function(done){
@@ -100,16 +108,25 @@ $(function() {
          */
         var firstFeed,secondFeed;
         beforeEach(function(done) {
-            loadFeed(0, function() {
-            firstFeed = $('.entry').html();
-            });
-            loadFeed(2, function() {
-            secondFeed = $('.entry').html();
-            done();
-            });
+            var err = null;
+            try {
+                loadFeed(0, function() {
+                firstFeed = $('.entry').html();
+                });
+                loadFeed(1, function() {
+                    secondFeed = $('.entry').html();
+                    done(err);
+                });
+            }
+            catch(e){
+                err = e;
+                console.log(e.message);
+                done(err);
+            }
         });
 
         it('changes the page content',function(done){
+            // console.log(firstFeed,secondFeed);
             expect(secondFeed == firstFeed).toBe(false);
             done();
         });
