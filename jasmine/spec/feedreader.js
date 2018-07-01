@@ -36,6 +36,10 @@ $(function() {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
             });
+            if(!allFeeds.length){
+                expect(allFeeds).toBeDefined();
+                expect(allFeeds.length).not.toBe(0);
+            }
          });
 
         /* TODO: Write a test that loops through each feed
@@ -47,6 +51,10 @@ $(function() {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
             });
+            if(!allFeeds.length){
+                expect(allFeeds).toBeDefined();
+                expect(allFeeds.length).not.toBe(0);
+            }
          });
     });
 
