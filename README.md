@@ -1,7 +1,18 @@
-# Project Overview
+# Feed Reader Testing Project
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+In this project we are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where we come in.
 
+## Table of Contents
+
+* [Why this Project?](#why-this-project)
+* [What will I learn?](#what-will-i-learn)
+* [How will I complete this project?](#how-will-i-complete-this-project)
+* [Learn About Folder Structure](#learn-about-folder-structure)
+* [Prerequisites](#prerequisites)
+* [How to launch the app locally?](#how-to-launch-the-app-locally)
+* [Using babel transpiler](#using-babel-transpiler)
+* [Authors](#authors)
+* [Acknowledgments](#acknowledgments)
 
 ## Why this Project?
 
@@ -15,13 +26,7 @@ Whether you work in an organization that uses test-driven development or in an o
 You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
 
 
-## How will this help my career?
-
-* Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
-* Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
-
-
-# How will I complete this project?
+## How will I complete this project?
 
 Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
@@ -44,5 +49,63 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 17. No test should be dependent on the results of another.
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
-21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+20. When complete - all of your tests should pass.
+
+## Learn About Folder Structure
+```
+Note : The folder structure may changes i.e we may include/exclude some folders/files
+as project progresses but the overall sructure will remain as presented below:
+```
+* index.html 	-- Project main file
+* css
+  - style.css   -- CSS for the application
+* fonts 		-- Application font
+* ES5
+  - feedreader.js	-- ES5 code for base ES6 application file(jasmine\spec\feedreader.js)
+  - app.js 			-- ES5 code for base ES6 application file(js\app.js)
+* jasmine
+  - lib 			-- jasmine library files
+  - spec\feedreader.js	-- jasmine spec file
+* js
+  - app.js   	-- javascript for the application
+* .babelrc  	-- babel plugins to be used by babel-cli for transpiling
+* .eslintrc.json -- configuration file for ESLint
+* package.json -- Project dev dependencies (for Grunt and Gulp)
+
+[What is babel?](https://babeljs.io/)
+
+## Prerequisites
+* Jasmine testing framework for JavaScript, ES6, Babel Transpiler
+
+## How to launch the app locally?
+* Step1 -- Fork the project repo and clone it in your local directory
+* Step2 -- Open the index.html in your browser and see all the jasmine test suite at the bottom of the page
+
+## Using babel transpiler (for converting code from ES6 to ES5)
+* Step1 -- Install the node and npm
+
+* Step2 -- Install the npm babel modules from the package.json
+```
+>>> npm install
+this command installs all the node related packages required to run the app locally in
+/node_modules folder. You can see this folder inside /FEND-feedreader folder after running npm install
+```
+
+* Step3 -- Transpile ES6 code to ES5
+```
+Below command will run scripts kept inside package.json
+>>> npm run-script build
+
+The application ES6 code will be copied as below:
+js\app.js -> ES5\app.js
+jasmine\spec\feedreader.js -> ES5\feedreader.js
+```
+* Step4 -- We will refer to the ES5 js code in index.html
+
+
+## Authors
+* **Gaurav Singh**
+
+## Acknowledgments
+* **Special thanks to Udacity Team**
+
